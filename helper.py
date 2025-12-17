@@ -4,6 +4,7 @@ import pandas as pd
 from collections import Counter
 import nltk 
 from nltk.corpus import stopwords 
+nltk.download('stopwords') 
 from string import punctuation
 import emoji
 
