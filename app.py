@@ -5,9 +5,10 @@ import seaborn as sns
 
 st.sidebar.title("Whatsapp Chat Analyzer")
 uploaded_file=st.sidebar.file_uploader("Choose a file")
-bytes_data=uploaded_file.getvalue()
-data=bytes_data.decode("utf-8")
-df=preprocessor.preprocess(data)
+if uploaded_file is not None:
+    bytes_data=uploaded_file.getvalue()
+    data=bytes_data.decode("utf-8")
+    df=preprocessor.preprocess(data)
 user_list=df['user'].unique().tolist()
 user_list.remove('group_notification')
 user_list.sort()
